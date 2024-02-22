@@ -8,8 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class OrderPageAboutRent {
-    private WebDriver driver;
+public class OrderPageAboutRent extends BasePage{
+
+    public OrderPageAboutRent(WebDriver driver){
+        super(driver);
+    }
     //Поле для ввода/выбора даты.
     private By inputDate = By.xpath(".//input[@placeholder = '* Когда привезти самокат']");
     //Поле выбора срока аренды.
@@ -23,9 +26,6 @@ public class OrderPageAboutRent {
     //Окно подтверждения заказа с текстом "Хотите оформить заказ?".
     private By confirmationWindow = By.cssSelector(".Order_ModalHeader__3FDaJ");
 
-    public OrderPageAboutRent(WebDriver driver) {
-        this.driver = driver;
-    }
     public void enterDate(String date) {
         driver.findElement(inputDate).sendKeys(date, Keys.ENTER);
     }

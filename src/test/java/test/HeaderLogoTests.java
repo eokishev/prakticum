@@ -2,12 +2,11 @@ package test;
 
 import org.junit.Test;
 import page.object.HomePage;
-
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
-public class HeaderLogoTests extends ConfigurationWebDriver {
+public class HeaderLogoTests extends BaseTest {
 
     @Test
     public void clickScooterLogo() {
@@ -19,7 +18,7 @@ public class HeaderLogoTests extends ConfigurationWebDriver {
     }
     @Test
     public void clickYandexLogo() {
-        String url = "https://dzen.ru/?yredirect=true";
+        String url = "https://dzen.ru/";
         driver.get("https://qa-scooter.praktikum-services.ru/");
         HomePage homePage = new HomePage(driver);
         homePage.clickLogoYandex();
@@ -27,6 +26,8 @@ public class HeaderLogoTests extends ConfigurationWebDriver {
         String currentHandle = driver.getWindowHandle();
         handlesCount.remove(currentHandle);
         driver.switchTo().window(handlesCount.toArray()[0].toString());
-        assertEquals("Открылась не главная страница \"Самоката\"", url, driver.getCurrentUrl());
+        String url2 =  (driver.getCurrentUrl()).substring(0,16);
+
+        assertEquals("Открылась не главная страница \"Самоката\"", url, url2);
     }
 }

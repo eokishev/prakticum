@@ -8,8 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HomePage {
-    private WebDriver driver;
+public class HomePage extends BasePage{
+    public HomePage(WebDriver driver){
+      super(driver);
+    }
+    public static final String URL="https://qa-scooter.praktikum-services.ru";
+
     //Кнопка "Заказать" вверху страницы.
     private By topOrderButton = By.className("Button_Button__ra12g");
     //Кнопка "Заказать" в центре страницы.
@@ -25,9 +29,7 @@ public class HomePage {
     //Кнопка поиска по номеру заказа Go!
     private By buttonGo = By.cssSelector(".Button_Button__ra12g.Header_Button__28dPO");
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
-    }
+
     public void clickTopOrderButton() {
         driver.findElement(topOrderButton).click();
     }

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 
-public class DropDownListTests extends ConfigurationWebDriver {
+public class DropDownListTests extends BaseTest {
     private String question;
     private String answer;
     private final boolean visibility = true;

@@ -4,8 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class OrderPageForWhom {
-    private WebDriver driver;
+public class OrderPageForWhom extends BasePage{
+    public OrderPageForWhom(WebDriver driver){
+        super(driver);
+    }
     //Поле для ввода имени.
     private By inputName = By.xpath(".//*[@placeholder = '* Имя']");
     //Поле для ввода фамилии.
@@ -19,9 +21,6 @@ public class OrderPageForWhom {
     //Кнопка "Далее".
     private By buttonNext = By.cssSelector(".Button_Button__ra12g.Button_Middle__1CSJM");
 
-    public OrderPageForWhom(WebDriver driver) {
-        this.driver = driver;
-    }
     public void enterName(String name) {
         driver.findElement(inputName).sendKeys(name);
     }

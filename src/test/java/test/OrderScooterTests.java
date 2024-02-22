@@ -7,7 +7,7 @@ import page.object.OrderPageForWhom;
 
 import static org.junit.Assert.assertEquals;
 
-public class OrderScooterTests extends ConfigurationWebDriver {
+public class OrderScooterTests extends BaseTest {
     @Test
     public void orderWithAllParameters() {
         driver.get("https://qa-scooter.praktikum-services.ru/");
