@@ -66,7 +66,7 @@ public class HomePage extends BasePage{
     }
     public String getAnswer(String question) {
         By questionAnswer = By.xpath(".//div[text() = '" + question + "']/../../div[2]/p");
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(questionAnswer));
         return driver.findElement(questionAnswer).getText();
     }
@@ -76,7 +76,7 @@ public class HomePage extends BasePage{
     }
     public void checkOrderStatus(String orderNumber) {
         clickOrderStatus();
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(this.orderNumber));
         enterOrderNumber(orderNumber);
         clickButtonGo();

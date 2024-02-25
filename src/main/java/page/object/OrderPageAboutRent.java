@@ -61,12 +61,12 @@ public class OrderPageAboutRent extends BasePage{
         clickButtonOrder();
     }
     public void confirmOrder() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(buttonYes));
         clickButtonYes();
     }
     public String orderConfirmationWindow() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(confirmationWindow));
         return driver.findElement(confirmationWindow).getText();
     }

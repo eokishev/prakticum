@@ -17,7 +17,7 @@ public class TrackPage extends BasePage{
 
 
     public boolean getOrderColumns() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(notFound));
         return driver.findElement(notFound).isDisplayed();
     }
