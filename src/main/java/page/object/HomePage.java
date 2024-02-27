@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
 public class HomePage extends BasePage{
     public HomePage(WebDriver driver){
@@ -76,7 +75,7 @@ public class HomePage extends BasePage{
     }
     public void checkOrderStatus(String orderNumber) {
         clickOrderStatus();
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver,3)
                 .until(ExpectedConditions.visibilityOfElementLocated(this.orderNumber));
         enterOrderNumber(orderNumber);
         clickButtonGo();
